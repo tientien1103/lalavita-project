@@ -12,6 +12,7 @@ import Section2 from "../home/section2";
 
 interface SectionProps {
   component: JSX.Element;
+  bgColor?: string;
 }
 
 const SECTION_LIST: SectionProps[] = [
@@ -20,6 +21,7 @@ const SECTION_LIST: SectionProps[] = [
   },
   {
     component: <Section2 />,
+    bgColor: "#fed614",
   },
   {
     component: <Section3 />,
@@ -83,9 +85,9 @@ const FullPageScroll = () => {
           ref={(el: HTMLDivElement | null) => {
             if (el) sectionsRef.current[index] = el;
           }}
-          className="h-screen w-full flex items-center justify-center text-4xl text-blue-500"
+          className={`h-screen w-full flex items-center justify-center bg-[${section.bgColor}]`}
         >
-          {section.component}
+          <div className="container max-w-screen-3xl">{section.component}</div>
         </section>
       ))}
 

@@ -9,7 +9,7 @@ interface ContainerProps {
 export default function Container({ children, className }: ContainerProps) {
   return (
     <div
-      className={clsx("container max-w-screen-3xl", {
+      className={clsx("container max-w-screen-2xl", {
         [`${className}`]: className,
       })}
     >

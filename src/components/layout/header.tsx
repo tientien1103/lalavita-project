@@ -3,8 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import Container from "../common/container";
-
 export default function Header() {
   // const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   // const [isOpen, setIsOpen] = useState(false);
@@ -15,7 +13,7 @@ export default function Header() {
 
   return (
     <header className="block inset-x-0 top-0 z-50 transition-colors duration-200 fixed bg-transparent">
-      <Container>
+      <div className="container max-w-[1800px]">
         <nav
           className="flex items-center justify-between py-20"
           aria-label="Global"
@@ -26,8 +24,8 @@ export default function Header() {
               priority
               src={"/logo-lalavita.webp"}
               alt="logo-lalavita"
-              width={211}
-              height={26}
+              width={101}
+              height={27}
             />
           </Link>
 
@@ -37,8 +35,8 @@ export default function Header() {
               priority
               src={"/logo-lalavita.webp"}
               alt="logo-lalavita"
-              width={120}
-              height={28}
+              width={101}
+              height={27}
             />
           </Link>
 
@@ -74,7 +72,7 @@ export default function Header() {
             </div>
           </div>
         </nav>
-      </Container>
+      </div>
     </header>
   );
 }
