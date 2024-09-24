@@ -9,34 +9,46 @@ import Section5 from "../home/section5";
 import Section4 from "../home/section4";
 import Section3 from "../home/section3";
 import Section2 from "../home/section2";
+import clsx from "clsx";
+import Header from "../layout/header";
 
 interface SectionProps {
+  title: string;
   component: JSX.Element;
   bgColor?: string;
+  bgImg?: string;
 }
 
 const SECTION_LIST: SectionProps[] = [
   {
+    title: "section1",
     component: <Section1 />,
   },
   {
+    title: "section2",
     component: <Section2 />,
     bgColor: "#fed614",
   },
   {
+    title: "section3",
     component: <Section3 />,
   },
   {
+    title: "section4",
     component: <Section4 />,
   },
   {
+    title: "section5",
     component: <Section5 />,
   },
   {
+    title: "section6",
     component: <Section6 />,
   },
   {
+    title: "section7",
     component: <Section7 />,
+    bgImg: "/section7/main-bg-section7.webp",
   },
 ];
 
@@ -80,20 +92,34 @@ const FullPageScroll = () => {
   return (
     <div className="fullpage-scroll">
       {SECTION_LIST.map((section, index) => (
-        <section
-          key={index}
-          ref={(el: HTMLDivElement | null) => {
-            if (el) sectionsRef.current[index] = el;
-          }}
-          className={`h-screen w-full flex items-center justify-center bg-[${section.bgColor}]`}
-        >
-          <div className="container max-w-screen-3xl">{section.component}</div>
-        </section>
+        <>
+          {section.title === "section7" ? (
+            <Header variant="white" />
+          ) : (
+            <Header />
+          )}
+
+          <section
+            key={index}
+            ref={(el: HTMLDivElement | null) => {
+              if (el) sectionsRef.current[index] = el;
+            }}
+            className={clsx(
+              `h-screen w-full flex items-center justify-center bg-[${section.bgColor}]`,
+              {
+                "bg-[url('/section7/main-bg-section7.webp')] bg-no-repeat bg-cover bg-center":
+                  section.bgImg,
+              }
+            )}
+          >
+            {section.component}
+          </section>
+        </>
       ))}
 
       {/* Pagination Buttons */}
       <Container>
-        <div className="fixed right-6 top-1/3 transform flex flex-col space-y-2">
+        <div className="fixed right-16 top-1/3 transform flex flex-col space-y-2">
           {SECTION_LIST.map((_, index) => (
             <button
               key={index}
