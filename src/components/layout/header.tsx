@@ -7,7 +7,7 @@ interface HeaderProps {
   variant?: "black" | "white";
 }
 
-export default function Header({ variant = "black" }: HeaderProps) {
+export default function Header({ variant }: HeaderProps) {
   // const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   // const [isOpen, setIsOpen] = useState(false);
 
@@ -22,29 +22,20 @@ export default function Header({ variant = "black" }: HeaderProps) {
           className="flex items-center justify-between py-20"
           aria-label="Global"
         >
-          {variant === "black" ? (
-            <Link className="" href="/">
-              <Image
-                loading="eager"
-                priority
-                src={"/logo-lalavita.webp"}
-                alt="logo-lalavita"
-                width={101}
-                height={27}
-              />
-            </Link>
-          ) : (
-            <Link className="" href="/">
-              <Image
-                loading="eager"
-                priority
-                src={"/logo-lalavita-white.webp"}
-                alt="logo-lalavita-white"
-                width={101}
-                height={27}
-              />
-            </Link>
-          )}
+          <Link href="/">
+            <Image
+              loading="eager"
+              priority
+              src={
+                variant === "black"
+                  ? "/logo-lalavita.webp"
+                  : "/logo-lalavita-white.webp"
+              }
+              alt="logo-lalavita"
+              width={101}
+              height={27}
+            />
+          </Link>
 
           {/* <Link className="block 2xl:hidden" href="/">
             <Image
@@ -62,25 +53,18 @@ export default function Header({ variant = "black" }: HeaderProps) {
               // onClick={toggleDropdown}
               className="flex flex-col items-end justify-end"
             >
-              {variant === "black" ? (
-                <Image
-                  loading="eager"
-                  priority
-                  src={"/menu-icon.webp"}
-                  alt="menu-icon"
-                  width={40}
-                  height={11}
-                />
-              ) : (
-                <Image
-                  loading="eager"
-                  priority
-                  src={"/menu-icon-white.webp"}
-                  alt="menu-icon-white"
-                  width={40}
-                  height={11}
-                />
-              )}
+              <Image
+                loading="eager"
+                priority
+                src={
+                  variant === "black"
+                    ? "/menu-icon.webp"
+                    : "/menu-icon-white.webp"
+                }
+                alt="menu-icon"
+                width={40}
+                height={11}
+              />
             </button>
             {/* {isOpen && (
               <div className="absolute left-0 right-0 top-[54px] !flex h-screen flex-col bg-black px-4 pt-4">
@@ -96,11 +80,15 @@ export default function Header({ variant = "black" }: HeaderProps) {
             )} */}
             <div className="flex gap-2">
               <button className="text-[#42c0cc] text-lg">KR</button>
-              {variant === "black" ? (
-                <button className="text-black text-lg">EN</button>
-              ) : (
-                <button className="text-white text-lg">EN</button>
-              )}
+              <button
+                className={
+                  variant === "black"
+                    ? "text-black text-lg"
+                    : "text-white text-lg"
+                }
+              >
+                EN
+              </button>
             </div>
           </div>
         </nav>

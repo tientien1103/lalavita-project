@@ -91,30 +91,23 @@ const FullPageScroll = () => {
 
   return (
     <div className="fullpage-scroll">
+      <Header variant={currentIndex === 6 ? "white" : "black"} />
       {SECTION_LIST.map((section, index) => (
-        <>
-          {section.title === "section7" ? (
-            <Header variant="white" />
-          ) : (
-            <Header />
+        <section
+          key={`page ${index}`}
+          ref={(el: HTMLDivElement | null) => {
+            if (el) sectionsRef.current[index] = el;
+          }}
+          className={clsx(
+            `h-screen w-full flex items-center justify-center bg-[${section.bgColor}]`,
+            {
+              "bg-[url('/section7/main-bg-section7.webp')] bg-no-repeat bg-cover bg-center":
+                section.bgImg,
+            }
           )}
-
-          <section
-            key={index}
-            ref={(el: HTMLDivElement | null) => {
-              if (el) sectionsRef.current[index] = el;
-            }}
-            className={clsx(
-              `h-screen w-full flex items-center justify-center bg-[${section.bgColor}]`,
-              {
-                "bg-[url('/section7/main-bg-section7.webp')] bg-no-repeat bg-cover bg-center":
-                  section.bgImg,
-              }
-            )}
-          >
-            {section.component}
-          </section>
-        </>
+        >
+          {section.component}
+        </section>
       ))}
 
       {/* Pagination Buttons */}
