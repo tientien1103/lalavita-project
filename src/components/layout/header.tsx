@@ -16,7 +16,7 @@ export default function Header({ variant }: HeaderProps) {
   // };
 
   return (
-    <header className="block inset-x-0 top-0 z-50 transition-colors duration-200 fixed bg-transparent">
+    <header className="block inset-x-0 top-0 z-10 transition-colors duration-200 fixed bg-transparent">
       <div className="container max-w-[1800px]">
         <nav
           className="flex items-center justify-between py-20"

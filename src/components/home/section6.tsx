@@ -77,7 +77,7 @@ function Section6() {
               <li
                 key={tab}
                 className={clsx("mr-6 cursor-pointer whitespace-nowrap", {
-                  "bg-[#f2599c] rounded-[19px] py-2 px-5": activeTab === tab,
+                  "bg-[#f2599c] rounded-[19px] py-1 px-4": activeTab === tab,
                 })}
                 onClick={() => {
                   onChangeTab(tab);

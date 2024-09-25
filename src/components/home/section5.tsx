@@ -65,7 +65,11 @@ function Section5() {
             {currentIndex + 1} / {ITEM_LIST.length}
           </p>
           <div className="flex gap-3">
-            <button onClick={handlePrev} disabled={isDisabledPrev}>
+            <button
+              onClick={handlePrev}
+              disabled={isDisabledPrev}
+              className="z-20"
+            >
               {isDisabledPrev ? (
                 <Image
                   src="/section5/icons/circle-arrow-l-off.webp"
@@ -84,7 +88,11 @@ function Section5() {
                 />
               )}
             </button>
-            <button onClick={handleNext} disabled={isDisabledNext}>
+            <button
+              onClick={handleNext}
+              disabled={isDisabledNext}
+              className="z-20"
+            >
               {isDisabledNext ? (
                 <Image
                   src="/section5/icons/circle-arrow-r-off.webp"
