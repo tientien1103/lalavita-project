@@ -36,6 +36,7 @@ const SECTION_LIST: SectionProps[] = [
   {
     title: "section4",
     component: <Section4 />,
+    bgColor: "linear-gradient(to right, #fed614 50%, white 50%)",
   },
   {
     title: "section5",
@@ -44,6 +45,7 @@ const SECTION_LIST: SectionProps[] = [
   {
     title: "section6",
     component: <Section6 />,
+    bgColor: "#f7d6e9",
   },
   {
     title: "section7",
@@ -98,13 +100,11 @@ const FullPageScroll = () => {
           ref={(el: HTMLDivElement | null) => {
             if (el) sectionsRef.current[index] = el;
           }}
-          className={clsx(
-            `h-screen w-full flex items-center justify-center bg-[${section.bgColor}]`,
-            {
-              "bg-[url('/section7/main-bg-section7.webp')] bg-no-repeat bg-cover bg-center":
-                section.bgImg,
-            }
-          )}
+          style={{ background: section.bgColor }}
+          className={clsx(`h-screen w-full flex items-center justify-center]`, {
+            "bg-[url('/section7/main-bg-section7.webp')] bg-no-repeat bg-cover bg-center":
+              section.bgImg,
+          })}
         >
           {section.component}
         </section>
