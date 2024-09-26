@@ -168,7 +168,7 @@ const FullPageScroll = () => {
       {/* Pagination Buttons */}
       <Container>
         {!isMobile && (
-          <div className="fixed right-4 2xl:right-16 top-1/3 transform flex flex-col space-y-2">
+          <div className="fixed right-4 3xl:right-16 top-1/3 transform flex flex-col space-y-2">
             {SECTION_LIST.map((_, index) => (
               <button
                 key={index}

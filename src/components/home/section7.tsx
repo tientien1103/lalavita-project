@@ -5,16 +5,16 @@ import Link from "next/link";
 
 function Section7() {
   return (
-    <Container>
-      <div className="lg:space-y-[104px] space-y-14 py-24">
-        <div className="lg:space-y-8 space-y-4">
+    <Container className="2xl:pl-32 3xl:pl-0 3xl:pt-28 lg:pt-20 lg:pb-0 pt-20 pb-14">
+      <div className="3xl:space-y-24 2xl:space-y-10 lg:space-y-32 space-y-10">
+        <div className="3xl:space-y-8 lg:space-y-6 space-y-4">
           <h3 className="text-lg leading-[40px] text-white">Address</h3>
           <p className="text-4xl leading-[48px] text-white">
             1234, Dosan-daero 1-gil, <br /> lalavita Building
           </p>
         </div>
 
-        <div className="lg:space-y-8 space-y-4">
+        <div className="3xl:space-y-8 lg:space-y-6 space-y-4">
           <h3 className="text-lg leading-[40px] text-white">Partnership</h3>
           <p className="text-4xl leading-[48px] text-white">
             +82 10 12347 890 <br />
@@ -22,7 +22,7 @@ function Section7() {
           </p>
         </div>
 
-        <div className="lg:space-y-8 space-y-4">
+        <div className="3xl:space-y-8 lg:space-y-6 space-y-4">
           <h3 className="text-lg leading-[40px] text-white">Social</h3>
           <div>
             <Link
@@ -56,6 +56,9 @@ function Section7() {
             </Link>
           </div>
         </div>
+        <p className="text-white text-lg">
+          © 2022 Lalavita. All Rights Reserved
+        </p>
       </div>
     </Container>
   );

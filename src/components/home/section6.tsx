@@ -91,8 +91,8 @@ function Section6() {
     }
   };
   return (
-    <div className="container max-w-screen-xl pt-28 pb-24 lg:pt-48 bg-[#f7d6e9] lg:bg-none">
-      <div className="flex flex-col gap-14 lg:gap-10">
+    <div className="container max-w-screen-xl pt-28 pb-24 2xl:pt-20 3xl:pt-44 bg-[#f7d6e9] lg:bg-none">
+      <div className="flex flex-col gap-14 lg:gap-10 2xl:mt-10 3xl:mt-0">
         <div className="flex w-full justify-center">
           <ul className="flex list-none flex-row items-center snap-x snap-mandatory overflow-x-scroll overscroll-x-contain scrollbar-hide whitespace-nowrap">
             {tabs.map((tab) => (

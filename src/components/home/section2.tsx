@@ -49,7 +49,7 @@ const CARD_LIST: CardListProps[] = [
 function Section2() {
   return (
     <Container>
-      <div className="w-full py-16 lg:py-24 bg-[#fed614]">
+      <div className="w-full py-16 2xl:py-2 3xl:py-24 bg-[#fed614]">
         <div className="flex flex-col items-center justify-center">
           <div className="flex flex-col gap-4">
             <p className="text-[#42c0cc] lg:text-lg text-sm font-semibold text-center">
@@ -65,13 +65,13 @@ function Section2() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 place-items-center space-y-6 lg:space-x-8 pt-5 lg:pt-16">
+          <div className="grid grid-cols-1 lg:grid-cols-3 place-items-center space-y-6 lg:space-x-4 xl:space-x-8 pt-5 lg:pt-16 2xl:pt-4 3xl:pt-16">
             {CARD_LIST.map((card, index) => (
               <div
                 key={`card ${index + 1}`}
                 style={{ backgroundColor: card.bgColor }}
                 className={clsx(
-                  "space-y-4 lg:space-y-7 rounded-[20px] 2xl:w-[467px] lg:h-[448px] lg:w-[367px] w-[300px] h-[120px] lg:pt-10 lg:px-10 px-5 pt-5",
+                  "space-y-4 lg:space-y-7 rounded-[20px] 2xl:w-[467px] 3xl:h-[448px] 2xl:h-[410px] lg:h-[448px] lg:w-[317px] w-[300px] h-[120px] lg:pt-10 xl:px-10 px-5 pt-5",
                   {
                     "mt-5": index === 0,
                   }
@@ -90,10 +90,13 @@ function Section2() {
                   {card.title}
                 </p>
                 <p
-                  className={clsx("hidden lg:block text-lg max-w-[363px]", {
-                    "text-[#999]": card.colorTextDes === "#999",
-                    "text-[#222]": card.colorTextDes === "#222",
-                  })}
+                  className={clsx(
+                    "hidden lg:block text-base xl:text-lg max-w-[363px]",
+                    {
+                      "text-[#999]": card.colorTextDes === "#999",
+                      "text-[#222]": card.colorTextDes === "#222",
+                    }
+                  )}
                 >
                   {card.description}
                 </p>

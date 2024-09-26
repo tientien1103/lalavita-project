@@ -62,7 +62,7 @@ const LOGO_LIST: LetterListProps[] = [
 function Section1() {
   return (
     <Container>
-      <div className="w-full pb-28 pt-16 2xl:pb-40 3xl:pt-52">
+      <div className="w-full pb-28 pt-16 lg:pt-24 2xl:pt-72 2xl:pb-72 3xl:pb-0 3xl:pt-20">
         <div className="flex flex-col-reverse items-center 2xl:flex-row 2xl:justify-between">
           <div className="flex flex-col gap-2 2xl:gap-6 3xl:gap-10 mt-4 lg:mt-20">
             <p className="text-[#42c0cc] lg:text-lg text-base font-semibold">
@@ -108,10 +108,10 @@ function Section1() {
               alt="down-arror"
               width={49}
               height={49}
-              className="object-contain 2xl:pt-24 lg:pt-16 pt-4 2xl:self-start self-center"
+              className="object-contain 3xl:pt-24 2xl:pt-5 lg:pt-10 pt-4 2xl:self-start self-center"
             />
           </div>
-          <div className="relative h-[200px] w-full self-center md:h-[768px] lg:w-[700px]">
+          <div className="relative h-[200px] w-full self-center lg:h-[600px] 2xl:h-[768px] lg:w-[700px]">
             <Image
               src="/main/main-bg.webp"
               alt="main-bg"

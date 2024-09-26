@@ -56,13 +56,13 @@ function Section5() {
     ? carouselRef.current.scrollLeft === 0
     : true;
   return (
-    <Container>
+    <Container className="lg:pb-0 lg:pt-24 pt-16 pb-10 2xl:pt-20">
       <div className="flex lg:flex-row lg:justify-between flex-col items-center lg:gap-5">
-        <div className="flex flex-col gap-2 lg:gap-6 3xl:gap-10 pt-16 pb-24 2xl:pt-28 lg:pb-0">
+        <div className="flex flex-col gap-2 lg:gap-6 3xl:gap-10">
           <p className="text-[#42c0cc] text-lg font-semibold lg:text-start text-center">
             NMN의 효능, 효과
           </p>
-          <h3 className="lg:text-[40px] lg:leading-[48px] text-2xl font-semibold text-[#222222] lg:text-start text-center">
+          <h3 className="3xl:text-[40px] 3xl:leading-[48px] lg:text-3xl text-2xl font-semibold text-[#222222] lg:text-start text-center">
             NMN의 효능과 효과를 <br />한 눈에 살펴보세요.
           </h3>
         </div>
@@ -126,13 +126,13 @@ function Section5() {
       <div
         ref={carouselRef}
         onScroll={handleScroll}
-        className="3xl:mt-16 mt-10 lg:ml-0 ml-14 flex flex-row lg:gap-24 gap-20 snap-x snap-mandatory overflow-x-scroll overscroll-x-contain scrollbar-hide whitespace-nowrap"
+        className="3xl:mt-16 mt-10 lg:ml-0 ml-10 flex flex-row lg:gap-24 gap-20 snap-x snap-mandatory overflow-x-scroll overscroll-x-contain scrollbar-hide whitespace-nowrap"
       >
         {ITEM_LIST.map((item, index) => (
           <div
             key={`item ${index + 1}`}
             className={clsx(
-              "lg:min-w-[350px] min-w-[300px] flex flex-col gap-6 lg:gap-12",
+              "lg:min-w-[350px] min-w-[300px] flex flex-col gap-6 3xl:gap-12",
               {
                 "-translate-x-12":
                   currentIndex === index && index === ITEM_LIST.length - 1,
@@ -144,14 +144,14 @@ function Section5() {
               alt={item.imgUrl}
               width={280}
               height={280}
-              className="object-contain w-[200px] h-[200px] lg:w-[280px] lg:h-[280px]"
+              className="object-contain w-[200px] h-[200px] 3xl:w-[280px] 3xl:h-[280px]"
               loading="lazy"
             />
-            <div className="space-y-5">
-              <p className="lg:text-2xl text-xl text-[#222] font-semibold max-w-[310px] whitespace-normal">
+            <div className="3xl:space-y-5 2xl:space-y-2 space-y-5">
+              <p className="2xl:text-2xl text-xl text-[#222] font-semibold max-w-[310px] whitespace-normal">
                 {item.title}
               </p>
-              <p className="lg:text-base text-sm text-[#999] max-w-[330px] whitespace-normal">
+              <p className="2xl:text-base text-sm text-[#999] max-w-[330px] whitespace-normal">
                 {item.description}
               </p>
             </div>
