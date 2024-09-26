@@ -62,17 +62,17 @@ const LOGO_LIST: LetterListProps[] = [
 function Section1() {
   return (
     <Container>
-      <div className="w-full pb-24 pt-10 md:pt-52">
-        <div className="flex flex-col-reverse items-center lg:flex-row lg:justify-between">
-          <div className="flex flex-col gap-10 mt-20">
-            <p className="text-[#42c0cc] text-lg font-semibold">
+      <div className="w-full pb-28 pt-28 2xl:pb-40 3xl:pt-52">
+        <div className="flex flex-col-reverse items-center 2xl:flex-row 2xl:justify-between">
+          <div className="flex flex-col gap-4 2xl:gap-6 3xl:gap-10 mt-10 lg:mt-20">
+            <p className="text-[#42c0cc] lg:text-lg text-base font-semibold">
               왜 라라비타 NMN일까요?
             </p>
-            <h3 className="text-[55px] leading-[72px] font-semibold text-[#222222]">
+            <h3 className="lg:text-[55px] lg:leading-[72px] text-4xl leading-[50px] font-semibold text-[#222222]">
               노화를 늦추고 <br /> 건강을 지키는
               <br /> 최적의 방법
             </h3>
-            <p className="text-lg text-[#222222]">
+            <p className="lg:text-lg text-base text-[#222222]">
               라라비타의 SUPERCONDRIA ®NMN은 전세계적으로 <br /> 인증 받은
               Uthever® NMN로 만든 고순도 제품입니다.
             </p>
@@ -108,7 +108,7 @@ function Section1() {
               alt="down-arror"
               width={49}
               height={49}
-              className="object-contain pt-24"
+              className="object-contain 2xl:pt-24 lg:pt-16 pt-10 2xl:self-start self-center"
             />
           </div>
           <div className="relative h-[200px] w-full self-center md:h-[768px] lg:w-[700px]">

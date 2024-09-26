@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import clsx from "clsx";
 import ProductCard from "../section6/product-card";
 import { PRODUCT_LIST } from "@/mockup/data";
@@ -19,6 +19,9 @@ const tabs = [
 function Section6() {
   const [activeTab, setTab] = useState(tabs[0]);
   const [productList, setProductList] = useState(PRODUCT_LIST);
+  const [fixedHeight, setFixedHeight] = useState("auto");
+  const productListRef = useRef<HTMLDivElement>(null);
+  const isMobile = window.innerWidth < 820;
 
   const onChangeTab = (type: string) => {
     setTab(type);
@@ -67,18 +70,26 @@ function Section6() {
         setProductList(PRODUCT_LIST);
         break;
     }
+
+    if (productListRef.current) {
+      const newHeight = productListRef.current.scrollHeight;
+      setFixedHeight(`${newHeight}px`);
+    }
   };
   return (
-    <div className="container max-w-screen-xl">
-      <div className="flex flex-col gap-10">
-        <div className="flex w-full justify-center text:sm md:text-lg font-medium md:font-extrabold uppercase text-[#111111]">
-          <ul className="flex list-none flex-col md:flex-row items-center">
+    <div className="container max-w-screen-xl py-40 lg:pt-48 bg-[#f7d6e9] lg:bg-none">
+      <div className="flex flex-col gap-24 lg:gap-10">
+        <div className="flex w-full justify-center">
+          <ul className="flex list-none flex-row items-center snap-x snap-mandatory overflow-x-scroll overscroll-x-contain scrollbar-hide whitespace-nowrap">
             {tabs.map((tab) => (
               <li
                 key={tab}
-                className={clsx("mr-6 cursor-pointer whitespace-nowrap", {
-                  "bg-[#f2599c] rounded-[19px] py-1 px-4": activeTab === tab,
-                })}
+                className={clsx(
+                  "mr-6 cursor-pointer text:sm md:text-lg font-medium md:font-extrabold uppercase text-[#111111] snap-start",
+                  {
+                    "bg-[#f2599c] rounded-[19px] py-1 px-4": activeTab === tab,
+                  }
+                )}
                 onClick={() => {
                   onChangeTab(tab);
                 }}
@@ -89,10 +100,24 @@ function Section6() {
           </ul>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-8 gap-16">
-          {productList.map((product, index) => (
-            <ProductCard key={`${product.name} ${index + 1}`} {...product} />
-          ))}
+        <div
+          ref={productListRef}
+          style={{ height: fixedHeight }}
+          className={clsx(
+            "flex flex-row lg:gap-8 gap-10 justify-center items-center",
+            {
+              "snap-x snap-mandatory overflow-x-scroll overscroll-x-contain scrollbar-hide whitespace-nowrap":
+                isMobile,
+            }
+          )}
+        >
+          {productList.length > 0 ? (
+            productList.map((product, index) => (
+              <ProductCard key={`${product.name} ${index + 1}`} {...product} />
+            ))
+          ) : (
+            <p className="text-center text-3xl text-[#222]">No product found</p>
+          )}
         </div>
       </div>
     </div>

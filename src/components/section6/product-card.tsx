@@ -11,7 +11,7 @@ function ProductCard({
 }: ProductListProps) {
   return (
     <div className="bg-white h-[486px] flex flex-col items-center gap-8">
-      <div className="bg-[#f8f8f8] h-[286px] w-[400px] flex items-center justify-center">
+      <div className="bg-[#f8f8f8] h-[286px] 2xl:min-w-[400px] lg:min-w-[330px] min-w-[350px] flex items-center justify-center">
         <Image
           src={`/section6/${img}`}
           alt={img}
@@ -24,7 +24,7 @@ function ProductCard({
         <p className="text-2xl leading-[48px] text-[#222] font-semibold text-center">
           {name}
         </p>
-        <p className="text-base text-[#999] text-center max-w-[310px]">
+        <p className="lg:text-base text-sm text-[#999] text-center whitespace-normal max-w-[310px]">
           {description}
         </p>
       </div>

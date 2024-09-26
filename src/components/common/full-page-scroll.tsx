@@ -1,5 +1,4 @@
 "use client";
-
 import { useEffect, useRef, useState } from "react";
 import Container from "./container";
 import Section1 from "../home/section1";
@@ -16,6 +15,7 @@ interface SectionProps {
   title: string;
   component: JSX.Element;
   bgColor?: string;
+  bgColorMobile?: string;
   bgImg?: string;
 }
 
@@ -37,6 +37,7 @@ const SECTION_LIST: SectionProps[] = [
     title: "section4",
     component: <Section4 />,
     bgColor: "linear-gradient(to right, #fed614 50%, white 50%)",
+    bgColorMobile: "linear-gradient(to bottom, #fed614 50%, white 50%)",
   },
   {
     title: "section5",
@@ -57,6 +58,10 @@ const SECTION_LIST: SectionProps[] = [
 const FullPageScroll = () => {
   const sectionsRef = useRef<HTMLDivElement[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const isMobile = window.innerWidth < 768;
+
+  const touchStartY = useRef(0);
+  const touchEndY = useRef(0);
 
   useEffect(() => {
     const handleScroll = (event: WheelEvent) => {
@@ -73,10 +78,40 @@ const FullPageScroll = () => {
       }
     };
 
+    const handleTouchStart = (event: TouchEvent) => {
+      touchStartY.current = event.touches[0].clientY;
+    };
+
+    const handleTouchMove = (event: TouchEvent) => {
+      touchEndY.current = event.touches[0].clientY;
+    };
+
+    const handleTouchEnd = () => {
+      if (touchStartY.current - touchEndY.current > 50) {
+        // Swiped up (next section)
+        if (currentIndex < sectionsRef.current.length - 1) {
+          setCurrentIndex((prevIndex) => prevIndex + 1);
+        }
+      }
+
+      if (touchStartY.current - touchEndY.current < -50) {
+        // Swiped down (previous section)
+        if (currentIndex > 0) {
+          setCurrentIndex((prevIndex) => prevIndex - 1);
+        }
+      }
+    };
+
     window.addEventListener("wheel", handleScroll, { passive: false });
+    window.addEventListener("touchstart", handleTouchStart);
+    window.addEventListener("touchmove", handleTouchMove);
+    window.addEventListener("touchend", handleTouchEnd);
 
     return () => {
       window.removeEventListener("wheel", handleScroll);
+      window.removeEventListener("touchstart", handleTouchStart);
+      window.removeEventListener("touchmove", handleTouchMove);
+      window.removeEventListener("touchend", handleTouchEnd);
     };
   }, [currentIndex]);
 
@@ -100,11 +135,16 @@ const FullPageScroll = () => {
           ref={(el: HTMLDivElement | null) => {
             if (el) sectionsRef.current[index] = el;
           }}
-          style={{ background: section.bgColor }}
-          className={clsx(`h-screen w-full flex items-center justify-center]`, {
-            "bg-[url('/section7/main-bg-section7.webp')] bg-no-repeat bg-cover bg-center":
-              section.bgImg,
-          })}
+          style={{
+            background: isMobile ? section.bgColorMobile : section.bgColor,
+          }}
+          className={clsx(
+            `h-full lg:h-screen w-full flex items-center justify-center`,
+            {
+              "bg-[url('/section7/main-bg-section7.webp')] bg-no-repeat bg-cover bg-center":
+                section.bgImg,
+            }
+          )}
         >
           {section.component}
         </section>
@@ -112,19 +152,21 @@ const FullPageScroll = () => {
 
       {/* Pagination Buttons */}
       <Container>
-        <div className="fixed right-16 top-1/3 transform flex flex-col space-y-2">
-          {SECTION_LIST.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => handlePaginationClick(index)}
-              className={`px-[6px] py-[6px] rounded-full ${
-                currentIndex === index
-                  ? "bg-[#42c0cc] text-white"
-                  : "bg-gray-300 text-black"
-              }`}
-            />
-          ))}
-        </div>
+        {!isMobile && (
+          <div className="fixed right-4 2xl:right-16 top-1/3 transform flex flex-col space-y-2">
+            {SECTION_LIST.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => handlePaginationClick(index)}
+                className={`px-[6px] py-[6px] rounded-full ${
+                  currentIndex === index
+                    ? "bg-[#42c0cc] text-white"
+                    : "bg-gray-300 text-black"
+                }`}
+              />
+            ))}
+          </div>
+        )}
       </Container>
     </div>
   );

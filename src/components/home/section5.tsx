@@ -10,7 +10,7 @@ function Section5() {
 
   const [scrollPosition, setScrollPosition] = useState(0);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const itemWidth = 270;
+  const itemWidth = window.innerWidth < 768 ? 380 : 270;
 
   const handleNext = () => {
     if (carouselRef.current) {
@@ -49,12 +49,12 @@ function Section5() {
     : true;
   return (
     <Container>
-      <div className="flex flex-row justify-between">
-        <div className="flex flex-col gap-10 mt-20">
-          <p className="text-[#42c0cc] text-lg font-semibold">
+      <div className="flex lg:flex-row lg:justify-between flex-col items-center gap-5">
+        <div className="flex flex-col gap-6 3xl:gap-10 pt-20 pb-10 2xl:pt-28 lg:pb-0">
+          <p className="text-[#42c0cc] text-lg font-semibold lg:text-start text-center">
             NMN의 효능, 효과
           </p>
-          <h3 className="text-[40px] leading-[48px] font-semibold text-[#222222]">
+          <h3 className="text-[40px] leading-[48px] font-semibold text-[#222222] lg:text-start text-center">
             NMN의 효능과 효과를 <br />한 눈에 살펴보세요.
           </h3>
         </div>
@@ -118,12 +118,18 @@ function Section5() {
       <div
         ref={carouselRef}
         onScroll={handleScroll}
-        className="mt-16 flex flex-row gap-24 snap-x snap-mandatory overflow-x-scroll overscroll-x-contain scrollbar-hide whitespace-nowrap"
+        className="3xl:mt-16 mt-10 lg:ml-0 ml-14 flex flex-row lg:gap-24 gap-20 snap-x snap-mandatory overflow-x-scroll overscroll-x-contain scrollbar-hide whitespace-nowrap"
       >
         {ITEM_LIST.map((item, index) => (
           <div
             key={`item ${index + 1}`}
-            className="min-w-[350px] flex flex-col gap-12"
+            className={clsx(
+              "lg:min-w-[350px] min-w-[300px] flex flex-col gap-6 lg:gap-12",
+              {
+                "-translate-x-12":
+                  currentIndex === index && index === ITEM_LIST.length - 1,
+              }
+            )}
           >
             <Image
               src={`/section5/${item.imgUrl}.webp`}

@@ -1,11 +1,12 @@
 import React from "react";
 import Container from "../common/container";
 import Image from "next/image";
+import Link from "next/link";
 
 function Section7() {
   return (
     <Container>
-      <div className="space-y-[104px]">
+      <div className="space-y-[104px] py-24">
         <div className="space-y-8">
           <h3 className="text-lg leading-[40px] text-white">Address</h3>
           <p className="text-4xl leading-[48px] text-white">
@@ -24,7 +25,11 @@ function Section7() {
         <div className="space-y-8">
           <h3 className="text-lg leading-[40px] text-white">Address</h3>
           <div>
-            <span className="text-4xl leading-[48px] text-white underline flex gap-2">
+            <Link
+              href="https://www.youtube.com/"
+              target="_blank"
+              className="text-4xl leading-[48px] text-white underline flex gap-2"
+            >
               Youtube
               <Image
                 src="/section7/sns-youtube.webp"
@@ -33,9 +38,13 @@ function Section7() {
                 height={37}
                 className="object-contain"
               />
-            </span>
+            </Link>
 
-            <span className="text-4xl leading-[48px] text-white underline flex gap-2">
+            <Link
+              href="https://www.instagram.com/"
+              target="_blank"
+              className="text-4xl leading-[48px] text-white underline flex gap-2"
+            >
               Instagram
               <Image
                 src="/section7/sns-instagram.webp"
@@ -44,7 +53,7 @@ function Section7() {
                 height={37}
                 className="object-contain"
               />
-            </span>
+            </Link>
           </div>
         </div>
       </div>
