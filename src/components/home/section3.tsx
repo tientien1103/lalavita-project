@@ -5,19 +5,19 @@ import Image from "next/image";
 function Section3() {
   return (
     <Container>
-      <div className="w-full py-24 lg:pb-24 lg:pt-32 2xl:pt-52">
+      <div className="w-full pb-28 pt-16 2xl:pb-40 3xl:pt-52">
         <div className="flex flex-col-reverse items-center 2xl:flex-row 2xl:justify-between">
-          <div className="flex flex-col gap-10">
+          <div className="flex flex-col gap-5 lg:gap-10">
             <p className="text-[#42c0cc] lg:text-lg text-base font-semibold">
               라라비타 NMN 원료
             </p>
-            <h3 className="text-[40px] leading-[48.5px] font-semibold text-[#222222]">
+            <h3 className="lg:text-[40px] lg:leading-[48.5px] text-3xl font-semibold text-[#222222]">
               Uthever® NMN이 <br />
               SUPERCONDRIA® NMN으로
               <br />
               새롭게 태어났습니다.
             </h3>
-            <p className="lg:text-lg text-base text-[#222222] max-w-[630px]">
+            <p className="lg:text-lg text-sm text-[#222222] max-w-[630px]">
               라라비타는 Uthever® NMN 상표 사용 허가를 받은 최초의 한국
               브랜드입니다. Uthever® NMN은 라라비타의 SUPERCONDRIA® NMN으로 전
               세계에 판매되고 있습니다. Effepharm의 Uthever® NMN은 시장에서

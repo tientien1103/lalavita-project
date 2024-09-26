@@ -6,15 +6,15 @@ import Link from "next/link";
 function Section7() {
   return (
     <Container>
-      <div className="space-y-[104px] py-24">
-        <div className="space-y-8">
+      <div className="lg:space-y-[104px] space-y-14 py-24">
+        <div className="lg:space-y-8 space-y-4">
           <h3 className="text-lg leading-[40px] text-white">Address</h3>
           <p className="text-4xl leading-[48px] text-white">
             1234, Dosan-daero 1-gil, <br /> lalavita Building
           </p>
         </div>
 
-        <div className="space-y-8">
+        <div className="lg:space-y-8 space-y-4">
           <h3 className="text-lg leading-[40px] text-white">Partnership</h3>
           <p className="text-4xl leading-[48px] text-white">
             +82 10 12347 890 <br />
@@ -22,8 +22,8 @@ function Section7() {
           </p>
         </div>
 
-        <div className="space-y-8">
-          <h3 className="text-lg leading-[40px] text-white">Address</h3>
+        <div className="lg:space-y-8 space-y-4">
+          <h3 className="text-lg leading-[40px] text-white">Social</h3>
           <div>
             <Link
               href="https://www.youtube.com/"

@@ -57,19 +57,19 @@ function Section5() {
     : true;
   return (
     <Container>
-      <div className="flex lg:flex-row lg:justify-between flex-col items-center gap-5">
-        <div className="flex flex-col gap-6 3xl:gap-10 pt-20 pb-10 2xl:pt-28 lg:pb-0">
+      <div className="flex lg:flex-row lg:justify-between flex-col items-center lg:gap-5">
+        <div className="flex flex-col gap-2 lg:gap-6 3xl:gap-10 pt-16 pb-24 2xl:pt-28 lg:pb-0">
           <p className="text-[#42c0cc] text-lg font-semibold lg:text-start text-center">
             NMN의 효능, 효과
           </p>
-          <h3 className="text-[40px] leading-[48px] font-semibold text-[#222222] lg:text-start text-center">
+          <h3 className="lg:text-[40px] lg:leading-[48px] text-2xl font-semibold text-[#222222] lg:text-start text-center">
             NMN의 효능과 효과를 <br />한 눈에 살펴보세요.
           </h3>
         </div>
 
-        <div className="flex items-center gap-6">
+        <div className="flex flex-row items-center gap-6">
           {/* Display current index */}
-          <p className="text-2xl text-[#222222]">
+          <p className="text-2xl text-[#222222] hidden lg:block">
             {currentIndex + 1} / {ITEM_LIST.length}
           </p>
           <div className="flex gap-3">
@@ -144,14 +144,14 @@ function Section5() {
               alt={item.imgUrl}
               width={280}
               height={280}
-              className="object-contain"
+              className="object-contain w-[200px] h-[200px] lg:w-[280px] lg:h-[280px]"
               loading="lazy"
             />
             <div className="space-y-5">
-              <p className="text-2xl text-[#222] font-semibold max-w-[310px] whitespace-normal">
+              <p className="lg:text-2xl text-xl text-[#222] font-semibold max-w-[310px] whitespace-normal">
                 {item.title}
               </p>
-              <p className="text-base text-[#999] max-w-[330px] whitespace-normal">
+              <p className="lg:text-base text-sm text-[#999] max-w-[330px] whitespace-normal">
                 {item.description}
               </p>
             </div>
