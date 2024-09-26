@@ -71,7 +71,7 @@ function Section2() {
                 key={`card ${index + 1}`}
                 style={{ backgroundColor: card.bgColor }}
                 className={clsx(
-                  "space-y-4 lg:space-y-7 rounded-[20px] 2xl:w-[467px] 3xl:h-[448px] 2xl:h-[410px] lg:h-[448px] lg:w-[317px] w-[300px] h-[120px] lg:pt-10 xl:px-10 px-5 pt-5",
+                  "space-y-4 lg:space-y-7 rounded-[20px] 2xl:w-[467px] 3xl:h-[448px] 2xl:h-[410px] lg:h-[448px] lg:w-[327px] w-[300px] h-[120px] lg:pt-10 xl:px-10 px-5 pt-5",
                   {
                     "mt-5": index === 0,
                   }

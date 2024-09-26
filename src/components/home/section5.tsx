@@ -56,9 +56,9 @@ function Section5() {
     ? carouselRef.current.scrollLeft === 0
     : true;
   return (
-    <Container className="lg:pb-0 lg:pt-24 pt-16 pb-10 2xl:pt-20">
+    <Container className="lg:pb-0 lg:pt-24 pt-20 pb-16 2xl:pt-20">
       <div className="flex lg:flex-row lg:justify-between flex-col items-center lg:gap-5">
-        <div className="flex flex-col gap-2 lg:gap-6 3xl:gap-10">
+        <div className="flex flex-col gap-6 3xl:gap-10">
           <p className="text-[#42c0cc] text-lg font-semibold lg:text-start text-center">
             NMN의 효능, 효과
           </p>
