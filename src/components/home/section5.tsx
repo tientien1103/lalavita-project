@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Container from "../common/container";
 import Image from "next/image";
 import { ITEM_LIST } from "@/mockup/data";
@@ -10,7 +10,15 @@ function Section5() {
 
   const [scrollPosition, setScrollPosition] = useState(0);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const itemWidth = window.innerWidth < 768 ? 380 : 270;
+  const [itemWidth, setItemWidth] = useState(0);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setItemWidth(window.innerWidth < 768 ? 380 : 270);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const handleNext = () => {
     if (carouselRef.current) {
