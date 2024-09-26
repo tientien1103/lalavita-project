@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import clsx from "clsx";
 import ProductCard from "../section6/product-card";
 import { PRODUCT_LIST } from "@/mockup/data";
@@ -21,7 +21,21 @@ function Section6() {
   const [productList, setProductList] = useState(PRODUCT_LIST);
   const [fixedHeight, setFixedHeight] = useState("auto");
   const productListRef = useRef<HTMLDivElement>(null);
-  const isMobile = window.innerWidth < 820;
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 820);
+    };
+
+    // Check window size on initial render
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const onChangeTab = (type: string) => {
     setTab(type);

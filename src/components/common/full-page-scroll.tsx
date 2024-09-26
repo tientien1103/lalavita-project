@@ -58,7 +58,22 @@ const SECTION_LIST: SectionProps[] = [
 const FullPageScroll = () => {
   const sectionsRef = useRef<HTMLDivElement[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const isMobile = window.innerWidth < 768;
+  const [isMobile, setIsMobile] = useState(false);
+  // const isMobile = window.innerWidth < 768;
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    // Check window size on initial render
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const touchStartY = useRef(0);
   const touchEndY = useRef(0);
