@@ -48,61 +48,59 @@ const CARD_LIST: CardListProps[] = [
 
 function Section2() {
   return (
-    <Container>
-      <div className="w-full py-16 2xl:py-2 3xl:py-24 bg-[#fed614]">
-        <div className="flex flex-col items-center justify-center">
-          <div className="flex flex-col gap-4">
-            <p className="text-[#42c0cc] lg:text-lg text-sm font-semibold text-center">
-              NMN는 왜 중요할까요?
-            </p>
-            <h3 className="lg:text-[40px] lg:leading-[48px] text-3xl font-semibold text-center text-[#222222]">
-              “노화는 질병, 그것도 치료할 수 있는 질병에 불과하다. <br />
-              그리고 이것에 가장 근접한 물질은 ‘NMN’이다.”
-            </h3>
-            <p className="lg:text-lg text-sm text-[#222222] text-center">
-              미국 하버드대학교 의과대학 블라바트닉 연구소 유전학 데이비드
-              싱클레어 교수
-            </p>
-          </div>
+    <Container className="max-w-screen-xl 3xl:max-w-screen-2xl bg-[#fed614]">
+      <div className="flex flex-col items-center justify-center py-20 2xl:py-2 3xl:py-24">
+        <div className="flex flex-col gap-4">
+          <p className="text-[#42c0cc] lg:text-lg text-sm font-semibold text-center">
+            NMN는 왜 중요할까요?
+          </p>
+          <h3 className="lg:text-[40px] lg:leading-[48px] text-3xl font-semibold text-center text-[#222222]">
+            “노화는 질병, 그것도 치료할 수 있는 질병에 불과하다. <br />
+            그리고 이것에 가장 근접한 물질은 ‘NMN’이다.”
+          </h3>
+          <p className="lg:text-lg text-sm text-[#222222] text-center">
+            미국 하버드대학교 의과대학 블라바트닉 연구소 유전학 데이비드
+            싱클레어 교수
+          </p>
+        </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 place-items-center space-y-6 lg:space-x-4 xl:space-x-8 pt-5 lg:pt-16 2xl:pt-4 3xl:pt-16">
-            {CARD_LIST.map((card, index) => (
-              <div
-                key={`card ${index + 1}`}
-                style={{ backgroundColor: card.bgColor }}
+        <div className="grid grid-cols-1 lg:grid-cols-3 place-items-center space-y-6 lg:space-x-4 xl:space-x-8 pt-5 lg:pt-16 2xl:pt-4 3xl:pt-16">
+          {CARD_LIST.map((card, index) => (
+            <div
+              key={`card ${index + 1}`}
+              style={{ backgroundColor: card.bgColor }}
+              className={clsx(
+                "space-y-4 lg:space-y-7 rounded-[20px] 2xl:w-[380px] 3xl:h-[448px] 2xl:h-[420px] lg:h-[448px] lg:w-[327px] w-[300px] h-[120px] lg:pt-10 xl:px-10 px-5 pt-5",
+                {
+                  "mt-6 lg:ml-3 2xl:ml-8": index === 0,
+                }
+              )}
+            >
+              <div className="flex justify-center items-center lg:justify-start lg:items-center">
+                <Image
+                  src={`/section2/${card.imgUrl}.webp`}
+                  alt={card.imgUrl}
+                  width={card.widthImg}
+                  height={card.heightImg}
+                  className={`object-contain w-[50px] h-[40px] lg:${card.widthImg} lg:${card.heightImg}`}
+                />
+              </div>
+              <p className="lg:text-[32px] lg:leading-[40px] text-sm text-[#222222] font-semibold lg:text-start text-center">
+                {card.title}
+              </p>
+              <p
                 className={clsx(
-                  "space-y-4 lg:space-y-7 rounded-[20px] 2xl:w-[467px] 3xl:h-[448px] 2xl:h-[410px] lg:h-[448px] lg:w-[327px] w-[300px] h-[120px] lg:pt-10 xl:px-10 px-5 pt-5",
+                  "hidden lg:block text-base xl:text-lg max-w-[363px]",
                   {
-                    "mt-5": index === 0,
+                    "text-[#999]": card.colorTextDes === "#999",
+                    "text-[#222]": card.colorTextDes === "#222",
                   }
                 )}
               >
-                <div className="flex justify-center items-center lg:justify-start lg:items-center">
-                  <Image
-                    src={`/section2/${card.imgUrl}.webp`}
-                    alt={card.imgUrl}
-                    width={card.widthImg}
-                    height={card.heightImg}
-                    className={`object-contain w-[50px] h-[40px] lg:${card.widthImg} lg:${card.heightImg}`}
-                  />
-                </div>
-                <p className="lg:text-[32px] lg:leading-[40px] text-sm text-[#222222] font-semibold lg:text-start text-center">
-                  {card.title}
-                </p>
-                <p
-                  className={clsx(
-                    "hidden lg:block text-base xl:text-lg max-w-[363px]",
-                    {
-                      "text-[#999]": card.colorTextDes === "#999",
-                      "text-[#222]": card.colorTextDes === "#222",
-                    }
-                  )}
-                >
-                  {card.description}
-                </p>
-              </div>
-            ))}
-          </div>
+                {card.description}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </Container>

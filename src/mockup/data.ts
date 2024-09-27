@@ -35,6 +35,114 @@ export const PRODUCT_LIST: ProductListProps[] = [
     newPrice: "56,900원",
     type: "NMN",
   },
+  {
+    img: "product-powder.webp",
+    name: "트렌스-레스베라트롤",
+    description:
+      "남자의 관절, 연골 건강에 도움을 줄 수 있는 제품입니다. 관절&연골 건강기능성 제품",
+    oldPrice: "67,000원",
+    newPrice: "56,900원",
+    type: "트렌스-레스베라트롤",
+  },
+  {
+    img: "product-powder.webp",
+    name: "트렌스-레스베라트롤",
+    description:
+      "남자의 관절, 연골 건강에 도움을 줄 수 있는 제품입니다. 관절&연골 건강기능성 제품",
+    oldPrice: "67,000원",
+    newPrice: "56,900원",
+    type: "트렌스-레스베라트롤",
+  },
+  {
+    img: "product-powder.webp",
+    name: "트렌스-레스베라트롤",
+    description:
+      "남자의 관절, 연골 건강에 도움을 줄 수 있는 제품입니다. 관절&연골 건강기능성 제품",
+    oldPrice: "67,000원",
+    newPrice: "56,900원",
+    type: "트렌스-레스베라트롤",
+  },
+  {
+    img: "product-powder.webp",
+    name: "비타민 K2+D3 파우더",
+    description:
+      "남자의 관절, 연골 건강에 도움을 줄 수 있는 제품입니다. 관절&연골 건강기능성 제품",
+    oldPrice: "67,000원",
+    newPrice: "56,900원",
+    type: "비타민 K2+D3",
+  },
+  {
+    img: "product-powder.webp",
+    name: "비타민 K2+D3 파우더",
+    description:
+      "남자의 관절, 연골 건강에 도움을 줄 수 있는 제품입니다. 관절&연골 건강기능성 제품",
+    oldPrice: "67,000원",
+    newPrice: "56,900원",
+    type: "비타민 K2+D3",
+  },
+  {
+    img: "product-powder.webp",
+    name: "비타민 K2+D3 파우더",
+    description:
+      "남자의 관절, 연골 건강에 도움을 줄 수 있는 제품입니다. 관절&연골 건강기능성 제품",
+    oldPrice: "67,000원",
+    newPrice: "56,900원",
+    type: "비타민 K2+D3",
+  },
+  {
+    img: "product-powder.webp",
+    name: "아피제닌 파우더",
+    description:
+      "남자의 관절, 연골 건강에 도움을 줄 수 있는 제품입니다. 관절&연골 건강기능성 제품",
+    oldPrice: "67,000원",
+    newPrice: "56,900원",
+    type: "아피제닌",
+  },
+  {
+    img: "product-powder.webp",
+    name: "아피제닌 파우더",
+    description:
+      "남자의 관절, 연골 건강에 도움을 줄 수 있는 제품입니다. 관절&연골 건강기능성 제품",
+    oldPrice: "67,000원",
+    newPrice: "56,900원",
+    type: "아피제닌",
+  },
+  {
+    img: "product-powder.webp",
+    name: "아피제닌 파우더",
+    description:
+      "남자의 관절, 연골 건강에 도움을 줄 수 있는 제품입니다. 관절&연골 건강기능성 제품",
+    oldPrice: "67,000원",
+    newPrice: "56,900원",
+    type: "아피제닌",
+  },
+  {
+    img: "product-powder.webp",
+    name: "피세틴 파우더",
+    description:
+      "남자의 관절, 연골 건강에 도움을 줄 수 있는 제품입니다. 관절&연골 건강기능성 제품",
+    oldPrice: "67,000원",
+    newPrice: "56,900원",
+    type: "피세틴",
+  },
+  {
+    img: "product-powder.webp",
+    name: "피세틴 파우더",
+    description:
+      "남자의 관절, 연골 건강에 도움을 줄 수 있는 제품입니다. 관절&연골 건강기능성 제품",
+    oldPrice: "67,000원",
+    newPrice: "56,900원",
+    type: "피세틴",
+  },
+  {
+    img: "product-powder.webp",
+    name: "피세틴 파우더",
+    description:
+      "남자의 관절, 연골 건강에 도움을 줄 수 있는 제품입니다. 관절&연골 건강기능성 제품",
+    oldPrice: "67,000원",
+    newPrice: "56,900원",
+    type: "피세틴",
+  },
 ];
 
 interface ItemListProps {

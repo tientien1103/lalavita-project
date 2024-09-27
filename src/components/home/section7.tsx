@@ -5,7 +5,7 @@ import Link from "next/link";
 
 function Section7() {
   return (
-    <Container className="2xl:pl-32 3xl:pl-0 3xl:pt-28 lg:pt-20 lg:pb-0 pt-20 pb-14">
+    <Container className="max-w-screen-xl 3xl:max-w-screen-2xl 3xl:pt-28 lg:pt-20 lg:pb-0 pt-20 pb-14">
       <div className="3xl:space-y-24 2xl:space-y-10 lg:space-y-32 space-y-10">
         <div className="3xl:space-y-8 lg:space-y-6 space-y-4">
           <h3 className="text-lg leading-[40px] text-white">Address</h3>

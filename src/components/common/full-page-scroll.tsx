@@ -153,13 +153,10 @@ const FullPageScroll = () => {
           style={{
             background: isMobile ? section.bgColorMobile : section.bgColor,
           }}
-          className={clsx(
-            `h-full lg:h-screen w-full flex items-center justify-center`,
-            {
-              "bg-[url('/section7/main-bg-section7.webp')] bg-no-repeat bg-cover bg-center":
-                section.bgImg,
-            }
-          )}
+          className={clsx(`h-screen w-full flex items-center justify-center`, {
+            "bg-[url('/section7/main-bg-section7.webp')] bg-no-repeat bg-cover bg-center":
+              section.bgImg,
+          })}
         >
           {section.component}
         </section>

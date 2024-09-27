@@ -91,7 +91,7 @@ function Section6() {
     }
   };
   return (
-    <div className="container max-w-screen-xl pt-28 pb-24 2xl:pt-20 3xl:pt-44 bg-[#f7d6e9] lg:bg-none">
+    <div className="container max-w-screen-xl pt-32 pb-36 2xl:pb-20 2xl:pt-14 3xl:pt-44 bg-[#f7d6e9] lg:bg-none">
       <div className="flex flex-col gap-14 lg:gap-10 2xl:mt-10 3xl:mt-0">
         <div className="flex w-full justify-center">
           <ul className="flex list-none flex-row items-center snap-x snap-mandatory overflow-x-scroll overscroll-x-contain scrollbar-hide whitespace-nowrap">
@@ -118,7 +118,7 @@ function Section6() {
           ref={productListRef}
           style={{ height: fixedHeight }}
           className={clsx(
-            "flex flex-row lg:gap-8 gap-10 justify-center items-center",
+            "flex flex-row lg:gap-8 gap-4 lg:justify-center lg:items-center justify-start",
             {
               "snap-x snap-mandatory overflow-x-scroll overscroll-x-contain scrollbar-hide whitespace-nowrap":
                 isMobile,
@@ -127,7 +127,9 @@ function Section6() {
         >
           {productList.length > 0 ? (
             productList.map((product, index) => (
-              <ProductCard key={`${product.name} ${index + 1}`} {...product} />
+              <div key={`${product.name} ${index + 1}`} className="snap-start">
+                <ProductCard {...product} />
+              </div>
             ))
           ) : (
             <p className="text-center text-3xl text-[#222]">No product found</p>

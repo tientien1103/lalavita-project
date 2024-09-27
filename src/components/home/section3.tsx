@@ -4,8 +4,8 @@ import Image from "next/image";
 
 function Section3() {
   return (
-    <Container>
-      <div className="w-full pb-28 pt-16 2xl:pb-40 3xl:pt-52">
+    <Container className="max-w-screen-xl 3xl:max-w-screen-2xl">
+      <div className="w-full pb-28 pt-16 2xl:pb-40 2xl:pt-48 3xl:pt-52">
         <div className="flex flex-col-reverse items-center 2xl:flex-row 2xl:justify-between">
           <div className="flex flex-col gap-5 lg:gap-10">
             <p className="text-[#42c0cc] lg:text-lg text-base font-semibold">
