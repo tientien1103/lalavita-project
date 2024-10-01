@@ -3,7 +3,7 @@ import Image from "next/image";
 
 function Section4() {
   return (
-    <div className="container max-w-[1800px] pt-16 2xl:pt-32 3xl:pt-10">
+    <div className="container max-w-[1800px] pt-10 2xl:pt-32 3xl:pt-10">
       <div className="grid grid-cols-1 lg:grid-cols-2">
         <div className="flex flex-col gap-2 lg:gap-6 3xl:gap-9 justify-center items-center text-center">
           <p className="text-[#42c0cc] lg:text-lg text-sm font-semibold">
@@ -26,7 +26,7 @@ function Section4() {
           />
         </div>
 
-        <div className="flex flex-col gap-2 lg:gap-6 3xl:gap-9 justify-center items-center text-center">
+        <div className="flex flex-col mt-10 lg:mt-0 gap-2 lg:gap-6 3xl:gap-9 justify-center items-center text-center">
           <p className="text-[#42c0cc] lg:text-lg text-sm font-semibold">
             Advantages 2
           </p>
